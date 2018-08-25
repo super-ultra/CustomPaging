@@ -13,13 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let viewController = TableViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        let tableController = AppDelegate.makeNavigationContoller(rootViewController: TableViewController(),
+            title: "Table", image: UIImage(named: "table_tab_bar_icon"))
+        
+        let collectionController = AppDelegate.makeNavigationContoller(rootViewController: CollectionViewController(),
+            title: "Collection", image: UIImage(named: "collection_tab_bar_icon"))
+        
+        let tabBarController = AppDelegate.makeTabBarController()
+        tabBarController.viewControllers = [tableController, collectionController]
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         return true
@@ -46,7 +52,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    // MARK: - Private
+    
+    private static func makeNavigationContoller(rootViewController: UIViewController, title: String, image: UIImage?)
+        -> UINavigationController
+    {
+        let controller = UINavigationController(rootViewController: rootViewController)
+        controller.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: nil)
+        controller.navigationBar.barTintColor = .white
+        return controller
+    }
+    
+    private static func makeTabBarController() -> UITabBarController {
+        let controller = UITabBarController()
+        controller.tabBar.tintColor = .applicationTintColor
+        controller.tabBar.barTintColor = .white
+        return controller
+    }
 
 }
 

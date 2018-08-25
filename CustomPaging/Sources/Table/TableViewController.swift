@@ -9,7 +9,7 @@
 import UIKit
 import pop
 
-class TableViewController: UIViewController {
+final class TableViewController: UIViewController {
 
     // MARK: - UIViewController
     
@@ -37,14 +37,15 @@ class TableViewController: UIViewController {
     
     private var anchors: [CGPoint] {
         return (0..<cellInfos.count).map {
-            let inset = tableView.adjustedContentInset.top + tableView.contentInset.top
+            let inset = tableView.adjustedContentInset.top
             let cellsHeight = cellInfos.prefix($0).reduce(0, { $0 + $1.height })
             return CGPoint(x: 0, y: cellsHeight - inset)
         }
     }
     
     private var maxAnchor: CGPoint {
-        return CGPoint(x: 0, y: tableView.contentSize.height - view.bounds.height)
+        let inset = tableView.adjustedContentInset.bottom
+        return CGPoint(x: 0, y: tableView.contentSize.height - view.bounds.height + inset)
     }
     
     private func nearestAnchor(forContentOffset offset: CGPoint) -> CGPoint {
@@ -53,7 +54,7 @@ class TableViewController: UIViewController {
         return candidate
     }
     
-    // MARK: Static
+    // MARK: - Private: Static
     
     private struct Static {
         
@@ -63,14 +64,14 @@ class TableViewController: UIViewController {
         
         static let cellReuseIdentifier = "\(UITableViewCell.self)"
         
-        static let rgbColors: [UInt] = [0xB11F38, 0xE77A39, 0xEBD524, 0x4AA77A, 0x685B87, 0xA24C57]
+        static let cellColors: [UInt] = [0xB11F38, 0xE77A39, 0xEBD524, 0x4AA77A, 0x685B87, 0xA24C57]
         
         static func makeCellInfos() -> [TableCellInfo] {
-            return (rgbColors + rgbColors + rgbColors).map {
+            return (cellColors + cellColors + cellColors).map {
                 TableCellInfo(text: String(format: "%06X", $0),
                     textColor: .white,
                     bgColor: UIColor(rgb: $0),
-                    height: round(.random(in: Static.minCellHeight...Static.maxCellHeight)),
+                    height: round(.random(in: minCellHeight...maxCellHeight)),
                     font: .systemFont(ofSize: 32, weight: .medium))
             }
         }
@@ -108,7 +109,7 @@ extension TableViewController: UITableViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint,
         targetContentOffset: UnsafeMutablePointer<CGPoint>)
     {
-        let decelerationRate = UIScrollViewDecelerationRateFast
+        let decelerationRate = (UIScrollView.DecelerationRate.normal.rawValue + UIScrollView.DecelerationRate.fast.rawValue) / 2
         let offsetProjection = scrollView.contentOffset.project(initialVelocity: velocity, decelerationRate: decelerationRate)
         let targetAnchor = nearestAnchor(forContentOffset: offsetProjection)
         
@@ -125,7 +126,7 @@ extension TableViewController: UITableViewDelegate {
 
 private extension UIScrollView {
     
-    private static let snappingAnimationKey = "CustomPaging.scrollView.snappingAnimation"
+    private static let snappingAnimationKey = "CustomPaging.TableViewController.scrollView.snappingAnimation"
     
     func snapAnimated(toContentOffset newOffset: CGPoint, velocity: CGPoint) {
         let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPScrollViewContentOffset)

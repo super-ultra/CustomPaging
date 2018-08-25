@@ -14,7 +14,15 @@
 		B137695A211505B40016FDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1376959211505B40016FDC4 /* Assets.xcassets */; };
 		B137695D211505B40016FDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B137695B211505B40016FDC4 /* LaunchScreen.storyboard */; };
 		B1C94E0621150AB900EAC3CE /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C94E0521150AB900EAC3CE /* UIColor+Utils.swift */; };
+		B1E051022132E35300A710D2 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E051012132E35300A710D2 /* CollectionCell.swift */; };
+		B1E051042132EC2900A710D2 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E051032132EC2900A710D2 /* PagingView.swift */; };
+		B1E05106213340F000A710D2 /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E05105213340F000A710D2 /* CGPoint+Utils.swift */; };
+		B1E0510821334D1700A710D2 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0510721334D1700A710D2 /* SliderView.swift */; };
+		B1E0510A21336DC400A710D2 /* UIColor+Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0510921336DC400A710D2 /* UIColor+Application.swift */; };
+		B1E0510C21336ECE00A710D2 /* CollectionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0510B21336ECE00A710D2 /* CollectionSettingsView.swift */; };
+		B1E0510E2133775400A710D2 /* Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0510D2133775400A710D2 /* Clamp.swift */; };
 		B1F52EDA2130CE5700E8ECB1 /* Projection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F52ED92130CE5700E8ECB1 /* Projection.swift */; };
+		B1F52EE02131B44D00E8ECB1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F52EDF2131B44D00E8ECB1 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +36,15 @@
 		B137695C211505B40016FDC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B137695E211505B40016FDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1C94E0521150AB900EAC3CE /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		B1E051012132E35300A710D2 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		B1E051032132EC2900A710D2 /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		B1E05105213340F000A710D2 /* CGPoint+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
+		B1E0510721334D1700A710D2 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		B1E0510921336DC400A710D2 /* UIColor+Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Application.swift"; sourceTree = "<group>"; };
+		B1E0510B21336ECE00A710D2 /* CollectionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSettingsView.swift; sourceTree = "<group>"; };
+		B1E0510D2133775400A710D2 /* Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clamp.swift; sourceTree = "<group>"; };
 		B1F52ED92130CE5700E8ECB1 /* Projection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projection.swift; sourceTree = "<group>"; };
+		B1F52EDF2131B44D00E8ECB1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		CC7DF618252C0C773E166A50 /* Pods-CustomPaging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomPaging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomPaging/Pods-CustomPaging.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,10 +92,15 @@
 		B1F52EDB2131B1F100E8ECB1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B1F52EDE2131B43400E8ECB1 /* Collection */,
 				B1F52EDC2131B20E00E8ECB1 /* Table */,
 				B1376952211505B30016FDC4 /* AppDelegate.swift */,
 				B1C94E0521150AB900EAC3CE /* UIColor+Utils.swift */,
 				B1F52ED92130CE5700E8ECB1 /* Projection.swift */,
+				B1E051032132EC2900A710D2 /* PagingView.swift */,
+				B1E05105213340F000A710D2 /* CGPoint+Utils.swift */,
+				B1E0510921336DC400A710D2 /* UIColor+Application.swift */,
+				B1E0510D2133775400A710D2 /* Clamp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -91,6 +112,17 @@
 				B1101092211511D50050F17F /* TableCellInfo.swift */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		B1F52EDE2131B43400E8ECB1 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				B1F52EDF2131B44D00E8ECB1 /* CollectionViewController.swift */,
+				B1E051012132E35300A710D2 /* CollectionCell.swift */,
+				B1E0510721334D1700A710D2 /* SliderView.swift */,
+				B1E0510B21336ECE00A710D2 /* CollectionSettingsView.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		DC0F54AA7343C3E6672A6AA1 /* Frameworks */ = {
@@ -221,11 +253,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F52EE02131B44D00E8ECB1 /* CollectionViewController.swift in Sources */,
 				B1C94E0621150AB900EAC3CE /* UIColor+Utils.swift in Sources */,
 				B1101093211511D50050F17F /* TableCellInfo.swift in Sources */,
+				B1E0510C21336ECE00A710D2 /* CollectionSettingsView.swift in Sources */,
 				B1376955211505B30016FDC4 /* TableViewController.swift in Sources */,
+				B1E051042132EC2900A710D2 /* PagingView.swift in Sources */,
+				B1E05106213340F000A710D2 /* CGPoint+Utils.swift in Sources */,
+				B1E051022132E35300A710D2 /* CollectionCell.swift in Sources */,
 				B1F52EDA2130CE5700E8ECB1 /* Projection.swift in Sources */,
 				B1376953211505B30016FDC4 /* AppDelegate.swift in Sources */,
+				B1E0510A21336DC400A710D2 /* UIColor+Application.swift in Sources */,
+				B1E0510821334D1700A710D2 /* SliderView.swift in Sources */,
+				B1E0510E2133775400A710D2 /* Clamp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -372,7 +412,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.ultra.custom-paging";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -392,7 +432,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.ultra.custom-paging";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
