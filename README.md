@@ -1,6 +1,2 @@
 # Custom Paging
-This is example for the articles:
-
-🇷🇺 article_link
-
-🇺🇸 article_link
+This is a demo project for [the article](https://medium.com/yandex-maps-ios/custom-paging-в-ios-c4dd4611e589).
